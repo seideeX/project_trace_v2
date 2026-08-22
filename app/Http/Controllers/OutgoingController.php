@@ -141,7 +141,7 @@ class OutgoingController extends Controller
             'outgoingPRs' => $outgoingPRs,
             'filters' => [
                 'search' => $request->search ?? '',
-                'status' => $request->status ?? 'all',
+                'status' => $request->status ?? '',
                 'department' => $request->department ?? '',
                 'date_from' => $request->date_from ?? '',
                 'date_to' => $request->date_to ?? '',

@@ -277,8 +277,8 @@ export default function Index({ incomingPRs, filters = {}, department }) {
                     {/* Filters */}
                     <FilterToggle
                         queryParams={queryParams}
-                        visibleFilters={["status", "date"]}
-                        clearRouteName="procurement.incoming"
+                        visibleFilters={["stage", "date"]}
+                        clearRouteName="incoming.index"
                     />
 
                     {/* Table */}

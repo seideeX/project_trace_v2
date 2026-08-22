@@ -52,7 +52,7 @@ export default function Calendar({ activities, calendarActivities, calendarMonth
     const monthLabel = month.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
     return (
-        <MainLayout>
+        <MainLayout toasterProps={{ position: "top-right", closeButton: true, duration: 3500 }}>
             <Head title="CAPA" />
             <BreadCrumbsHeader breadcrumbs={[{ label: "CAPA", showOnMobile: true }]} />
             <div className="min-h-[calc(100vh-65px)] p-5 md:p-8">

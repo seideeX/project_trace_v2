@@ -228,7 +228,7 @@ export default function ProcurementRegistry({
                     queryParams={queryParams}
                     visibleFilters={["department", "queue", "status"]}
                     departments={departments}
-                    clearRouteName="dashboard"
+                    clearRouteName="procurement.index"
                 />
             )}
             {/* Registry Table */}

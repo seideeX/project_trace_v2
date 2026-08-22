@@ -32,6 +32,11 @@ export default function FilterToggle({
 
         visibleFilters.forEach((filter) => {
             delete params[filter];
+
+            if (filter === "date") {
+                delete params.date_from;
+                delete params.date_to;
+            }
         });
 
         delete params.search;
@@ -181,7 +186,7 @@ export default function FilterToggle({
                                     type="date"
                                     value={queryParams.date_from ?? ""}
                                     onChange={(e) =>
-                                        searchFieldName(
+                                        search(
                                             "date_from",
                                             e.target.value,
                                         )
@@ -199,7 +204,7 @@ export default function FilterToggle({
                                     type="date"
                                     value={queryParams.date_to ?? ""}
                                     onChange={(e) =>
-                                        searchFieldName(
+                                        search(
                                             "date_to",
                                             e.target.value,
                                         )
@@ -233,13 +238,13 @@ export default function FilterToggle({
                         </div>
                     )}
 
-                    {isVisible("status") && (
+                    {(isVisible("status") || isVisible("stage")) && (
                         <div className="min-w-[240px] flex-[1.5] sm:max-w-[280px]">
                             <SelectField
-                                name="status"
+                                name={isVisible("stage") ? "stage" : "status"}
                                 label="Procurement Stage"
-                                value={queryParams.status ?? ""}
-                                onChange={handleChange("status")}
+                                value={isVisible("stage") ? queryParams.stage ?? "" : queryParams.status ?? ""}
+                                onChange={handleChange(isVisible("stage") ? "stage" : "status")}
                                 options={[
                                     {
                                         value: "",

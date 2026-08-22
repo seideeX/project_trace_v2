@@ -172,9 +172,14 @@ class CAPAController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CAPA $cAPA)
+    public function destroy(Request $request, CAPA $cAPA)
     {
-        abort_unless(request()->user()?->hasRole('admin'), 403);
+        abort_unless($request->user()?->hasRole('admin'), 403);
+
+        $request->validate([
+            'password' => ['required', 'current_password'],
+        ]);
+
         $cAPA->delete();
 
         return back()->with('success', 'CAPA activity deleted.');

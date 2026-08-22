@@ -319,7 +319,7 @@ export default function Index({
                     <FilterToggle
                         queryParams={queryParams}
                         visibleFilters={["department", "status", "date"]}
-                        clearRouteName="procurement.outgoing"
+                        clearRouteName="outgoing.index"
                         departments={departments}
                     />
 
