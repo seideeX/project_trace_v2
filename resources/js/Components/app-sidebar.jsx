@@ -144,7 +144,7 @@ export function AppSidebar({ ...props }) {
                         <Layers3Icon className="size-5" strokeWidth={2.35} />
                     </span>
                     <span className="text-xl font-extrabold leading-none tracking-normal text-blue-700">
-                        ProcureTrack
+                        Project Trace
                     </span>
                 </Link>
             </SidebarHeader>
